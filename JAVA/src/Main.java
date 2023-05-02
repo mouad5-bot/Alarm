@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Alarm alarm = new Alarm();
+        Alarm alarm = new Alarm("hey bero");
         alarm.turnOn();
         alarm.sendReport();
 

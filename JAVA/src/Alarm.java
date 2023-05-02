@@ -1,7 +1,11 @@
 import java.util.Locale;
 public class Alarm {
     boolean active;
-    String message="THE TEMPEARTOR IS TOO HIGH";
+    final String message;
+
+    Alarm(String message){
+        this.message = message;
+    }
 
     void turnOn(){
         active = true;
