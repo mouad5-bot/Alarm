@@ -1,10 +1,28 @@
+import java.time.LocalDateTime;
 import java.util.Locale;
+
 public class Alarm {
     boolean active;
     final String message;
+    LocalDateTime snoozeUntil;
 
+    Alarm(){
+        this.message = "this is a default messaage !!!";
+    }
     Alarm(String message){
         this.message = message;
+        stopeSnoozing();
+    }
+
+    void snooze(){
+        snoozeUntil = LocalDateTime.now().plusMinutes(5);
+    }
+
+    boolean isSnoozing(){
+        return snoozeUntil.isAfter(LocalDateTime.now());
+    }
+    void stopeSnoozing(){
+        snoozeUntil = LocalDateTime.now().minusSeconds(1);
     }
 
     void turnOn(){
@@ -17,7 +35,7 @@ public class Alarm {
         return getReport(false);
     }
     String getReport(boolean uppercase){
-        if (active) {
+        if (active && !isSnoozing()) {
             if(uppercase){
                 return message.toUpperCase();
             }else{
@@ -29,5 +47,13 @@ public class Alarm {
     }
     void sendReport(){
         System.out.println(getReport(true));
+    }
+
+    public static void main (String[] args) throws InterruptedException {
+        Alarm alarm = new Alarm("this is alarm in main inside class");
+        alarm.turnOn();
+        alarm.snooze();
+        Thread.sleep(6000 * 2);
+        alarm.sendReport();
     }
 }
