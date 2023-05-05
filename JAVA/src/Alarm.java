@@ -2,9 +2,9 @@ import java.time.LocalDateTime;
 import java.util.Locale;
 
 public class Alarm {
-    boolean active;
-    final String message;
-    LocalDateTime snoozeUntil;
+    private  boolean active;
+    private final String message;
+    private LocalDateTime snoozeUntil;
 
     Alarm(){
         this.message = "this is a default messaage !!!";
@@ -15,7 +15,8 @@ public class Alarm {
     }
 
     void snooze(){
-        snoozeUntil = LocalDateTime.now().plusMinutes(5);
+        if(active)
+            snoozeUntil = LocalDateTime.now().plusSeconds(5);
     }
 
     boolean isSnoozing(){
@@ -27,9 +28,11 @@ public class Alarm {
 
     void turnOn(){
         active = true;
+        stopeSnoozing();
     }
     void turnOff(){
         active = false;
+        stopeSnoozing();
     }
     String getReport(){
         return getReport(false);
@@ -56,4 +59,15 @@ public class Alarm {
         Thread.sleep(6000 * 2);
         alarm.sendReport();
     }
+
+
+
+
+    //============> accessor methods <================//
+    //public LocalDateTime getSnoozeUntil(){
+       // return snoozeUntil;
+    //}
+    //public void setSnoozeUntil(LocalDateTime snoozeUntil){
+      //  this.snoozeUntil = snoozeUntil;
+    //}
 }
