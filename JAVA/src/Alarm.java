@@ -60,9 +60,6 @@ public class Alarm {
         alarm.sendReport();
     }
 
-
-
-
     //============> accessor methods <================//
     //public LocalDateTime getSnoozeUntil(){
        // return snoozeUntil;
