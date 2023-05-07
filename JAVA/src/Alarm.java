@@ -2,7 +2,7 @@ import java.time.LocalDateTime;
 import java.util.Locale;
 
 public class Alarm {
-    private  boolean active;
+    protected boolean active;
     private final String message;
     private LocalDateTime snoozeUntil;
 
@@ -12,6 +12,10 @@ public class Alarm {
     Alarm(String message){
         this.message = message;
         stopeSnoozing();
+    }
+
+    public String getMessage() {
+        return message;
     }
 
     void snooze(){
