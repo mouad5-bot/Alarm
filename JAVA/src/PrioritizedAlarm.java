@@ -1,6 +1,6 @@
 import java.awt.print.PrinterIOException;
 
-public class PrioritizedAlarm extends Alarm {
+public final class PrioritizedAlarm extends Alarm {
     private final int priority;
     public PrioritizedAlarm(String message, int priority){
         super(message);

@@ -1,7 +1,7 @@
 import java.time.LocalDateTime;
 import java.util.Locale;
 
-public class Alarm {
+public sealed class Alarm permits PrioritizedAlarm, HighVisibilityAlarm{
     protected boolean active;
     private final String message;
     private LocalDateTime snoozeUntil;

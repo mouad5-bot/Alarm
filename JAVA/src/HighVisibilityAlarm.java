@@ -1,4 +1,4 @@
-public class HighVisibilityAlarm extends Alarm {
+public final class HighVisibilityAlarm extends Alarm {
     public HighVisibilityAlarm(String message) {
         super(message);
     }
