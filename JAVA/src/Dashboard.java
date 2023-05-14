@@ -18,6 +18,7 @@ public class Dashboard {
 
         dashboard.add(new PrioritizedAlarm("temperator is too high", 2));
         dashboard.add(new HighVisibilityAlarm("Pressure too low"));
+        dashboard.add(new TimeSensitiveAlarm("Never mind the other alarms"));
 
         dashboard.PrintBigReport();
     }
