@@ -56,6 +56,11 @@ public  class Alarm{
         System.out.println(getReport(true));
     }
 
+    @Override
+    public String toString(){
+        return getReport();
+    }
+
     public static void main (String[] args) throws InterruptedException {
         Alarm alarm = new Alarm("this is alarm in main inside class");
         alarm.turnOn();

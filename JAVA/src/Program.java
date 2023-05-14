@@ -1,8 +1,7 @@
 public class Program {
     public static void main(String[] args) {
-        HighVisibilityAlarm alarm = new HighVisibilityAlarm("Pressure low");
+        Alarm alarm = new HighVisibilityAlarm("Your hair is on faire.");
         alarm.turnOn();
-        String report = alarm.getReport();
-        System.out.println(report);
+        System.out.println(alarm);
     }
 }
